@@ -113,6 +113,13 @@ app.get('/logout', (req, res) => {
   });
 });
 
+
+app.get('/developers', (req, res) => {
+    res.render("landing")
+  });
+  
+
+
 // 404 Error handling (Optional)
 app.use((req, res) => {
   res.status(404).render('404'); // Make sure you create a 404.ejs view
