@@ -6,13 +6,31 @@
   <title>ChatLock Documentation - Detailed</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+    .lock {
+        background-color: yellow;
+    }
+</style>
 <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
 
 <!-- Header -->
 <header class="bg-white shadow-sm sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
     <h1 class="text-2xl font-bold text-indigo-600">🔒 ChatLock</h1>
     <nav class="space-x-6 hidden md:flex">
+      <a href="#overview" class="text-gray-600 hover:text-indigo-600">Overview</a>
+      <a href="#features" class="text-gray-600 hover:text-indigo-600">Features</a>
+      <a href="#ai" class="text-gray-600 hover:text-indigo-600">AI Features</a>
+      <a href="#audience" class="text-gray-600 hover:text-indigo-600">Audience</a>
+      <a href="#branding" class="text-gray-600 hover:text-indigo-600">Branding</a>
+    </nav>
+    <div class="block md:hidden">
+      <button class="text-gray-600 hover:text-indigo-600" onclick="toggleMobileMenu()">☰</button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden hidden">
+    <nav class="space-y-4 p-4 bg-white">
       <a href="#overview" class="text-gray-600 hover:text-indigo-600">Overview</a>
       <a href="#features" class="text-gray-600 hover:text-indigo-600">Features</a>
       <a href="#ai" class="text-gray-600 hover:text-indigo-600">AI Features</a>
@@ -46,13 +64,13 @@
     <h3 class="text-3xl font-bold text-indigo-600 mb-8">🌟 Unique & Innovative Features</h3>
 
     <div class="space-y-10">
-
       <!-- LockModes -->
       <div>
-        <h4 class="text-2xl font-semibold mb-2">🔐 LockModes – Post Control Like Never Before</h4>
+        <h4 class="text-2xl font-semibold mb-2">🔐 1. LockModes – Post Control Jaise Pehle Kabhi Nahi</h4>
         <p class="text-gray-700">
           LockModes give users fine-grained control over every piece of content. Set visibility settings like "Close Friends Only" or "Mutuals". Posts can auto-lock after a set time, adding extra privacy. Unlockable posts let users request access with a personalized message, perfect for creators who want to monetize exclusivity without needing an external platform.
         </p>
+        <a href="/Post.html" class="text-2xl font-extrabold text-red-500">Lock Mood</a>
       </div>
 
       <!-- AI-Powered Vibe Filter -->
@@ -61,6 +79,7 @@
         <p class="text-gray-700">
           Before publishing a post, ChatLock’s AI scans its emotional tone (happy, sad, angry, sarcastic) and offers suggestions to tweak it. It recommends hashtags, moods, emojis, and even warns if your tone could be misunderstood, giving you full creative control while minimizing unintentional misunderstandings online.
         </p>
+        <a href="/aife.html" class="text-2xl font-extrabold text-red-500">🧠 AI-Powered Vibe Filter</a>
       </div>
 
       <!-- VaultChat -->
@@ -102,7 +121,6 @@
           Own your identity completely. With optional Web3 support, you can store your data on decentralized networks. Export or delete everything in one click — no need to beg for account deletion.
         </p>
       </div>
-
     </div>
   </div>
 </section>
@@ -113,6 +131,7 @@
     <h3 class="text-3xl font-bold text-indigo-600 mb-8">🔮 Advanced AI Features</h3>
 
     <div class="space-y-10">
+        <a href="/feature.html" class="text-2xl font-extrabold text-red-500">🔮 Advanced AI Features</a>
 
       <!-- Memory Wall -->
       <div>
@@ -177,7 +196,6 @@
           AI dynamically groups your followers into social circles like “True Vibes”, “Mutual Creators”, or “Ghost Followers” based on real engagement patterns. Make smarter posting decisions easily.
         </p>
       </div>
-
     </div>
   </div>
 </section>
@@ -225,6 +243,13 @@
 <footer class="bg-white border-t py-6 text-center text-gray-500 text-sm">
   © 2025 ChatLock. Built with privacy at the core.
 </footer>
+
+<script>
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobile-menu");
+    menu.classList.toggle("hidden");
+  }
+</script>
 
 </body>
 </html>
