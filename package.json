@@ -1,0 +1,29 @@
+{
+  "name": "chatlock_documentation",
+  "version": "1.0.0",
+  "description": "🔒 ChatLock – The Future of Private Social Networking 🔍 Overview ChatLock is a next-generation social platform blending the best of Instagram's visual storytelling, Facebook's community profiles, and Twitter's real-time conversations — all under a privacy-first ecosystem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderirfannn/ChatLock-documentation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/coderirfannn/ChatLock-documentation/issues"
+  },
+  "homepage": "https://github.com/coderirfannn/ChatLock-documentation#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.14.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

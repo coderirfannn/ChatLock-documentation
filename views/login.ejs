@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ChatLock Verification</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Custom styles for animation -->
+  <style>
+    /* Background animation */
+    @keyframes bgAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .bg-gradient-animation {
+      background: linear-gradient(45deg, #1a202c, #2d3748, #4a5568);
+      background-size: 400% 400%;
+      animation: bgAnimation 5s ease infinite;
+    }
+
+    /* Button animation */
+    @keyframes buttonAnimation {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .btn-verify:hover {
+      animation: buttonAnimation 0.6s ease-in-out infinite;
+      background-color: #34d399; /* green hover color */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Floating input effect */
+    .input-field {
+      transition: all 0.3s ease-in-out;
+    }
+    .input-field:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(72, 85, 99, 0.5);
+      border-color: #34d399;
+    }
+  </style>
+
+</head>
+<body class="bg-gray-800 flex justify-center items-center h-screen bg-gradient-animation">
+
+  <div class="bg-opacity-90 bg-white p-10 rounded-lg shadow-xl w-96">
+    <h2 class="text-3xl font-bold text-indigo-600 mb-6 text-center animate__animated animate__fadeIn">Verify Your Identity</h2>
+
+    <% if (error) { %>
+      <div class="text-red-500 text-sm mb-4 text-center"><%= error %></div>
+    <% } %>
+
+    <form action="/login" method="POST">
+      <div class="mb-6">
+        <label for="verificationCode" class="block text-gray-700">Verification Code</label>
+        <input type="text" id="verificationCode" name="verificationCode" class="w-full p-3 border border-gray-300 rounded-md input-field focus:outline-none focus:ring-2 focus:ring-indigo-500" pattern="\d{8}" maxlength="8" required>
+        <small class="text-gray-500">Enter the 8-digit verification code</small>
+      </div>
+
+      <div class="mb-6">
+        <label for="role" class="block text-gray-700">Role</label>
+        <select id="role" name="role" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+          <option value="UiUx">UiUx</option>
+          <option value="Full Project">Full Project</option>
+          <option value="student">Student</option>
+        </select>
+      </div>
+
+      <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-md btn-verify transition-all ease-in-out duration-300">Verify</button>
+    </form>
+  </div>
+
+</body>
+</html>
