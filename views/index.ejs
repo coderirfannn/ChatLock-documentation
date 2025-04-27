@@ -14,15 +14,17 @@
 <body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
 
 <!-- Header -->
-<header class="bg-white shadow-sm sticky top-0 z-50">
+<header class="bg-white shadow-md sticky top-0 z-50">
   <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between">
-    <h1 class="text-2xl font-bold text-indigo-600">🔒 ChatLock</h1>
+    <h1 class="text-2xl font-extrabold text-indigo-600 flex items-center">
+      <span>🔒</span> ChatLock
+    </h1>
     <nav class="space-x-6 hidden md:flex">
-      <a href="#overview" class="text-gray-600 hover:text-indigo-600">Overview</a>
-      <a href="#features" class="text-gray-600 hover:text-indigo-600">Features</a>
-      <a href="#ai" class="text-gray-600 hover:text-indigo-600">AI Features</a>
-      <a href="#audience" class="text-gray-600 hover:text-indigo-600">Audience</a>
-      <a href="#branding" class="text-gray-600 hover:text-indigo-600">Branding</a>
+      <a href="#overview" class="text-gray-600 hover:text-indigo-600 transition duration-300">Overview</a>
+      <a href="#features" class="text-gray-600 hover:text-indigo-600 transition duration-300">Features</a>
+      <a href="#ai" class="text-gray-600 hover:text-indigo-600 transition duration-300">AI Features</a>
+      <a href="#audience" class="text-gray-600 hover:text-indigo-600 transition duration-300">Audience</a>
+      <a href="#branding" class="text-gray-600 hover:text-indigo-600 transition duration-300">Branding</a>
     </nav>
     <div class="block md:hidden">
       <button class="text-gray-600 hover:text-indigo-600" onclick="toggleMobileMenu()">☰</button>
@@ -41,18 +43,20 @@
 </header>
 
 <!-- Hero Section -->
-<section class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-20">
+<section class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-24">
   <div class="max-w-5xl mx-auto px-6 text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">ChatLock – The Future of Private Social Networking</h2>
-    <p class="text-lg md:text-xl">Where privacy, authentic engagement, and AI-driven personalization meet.</p>
+    <h2 class="text-4xl md:text-5xl font-extrabold mb-6">ChatLock – The Future of Private Social Networking</h2>
+    <p class="text-lg md:text-xl mb-6">Where privacy, authentic engagement, and AI-driven personalization meet.</p>
+    <h1 class="text-2xl md:text-3xl font-semibold mt-4 text-yellow-300"><%= role %></h1>
+    <h2 class="text-lg md:text-xl text-gray-200 mt-2"><%= verificationCode %></h2>
   </div>
 </section>
 
 <!-- Overview -->
-<section id="overview" class="py-16">
-  <div class="max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-indigo-600 mb-4">🔍 Overview</h3>
-    <p class="text-gray-700 mb-4">
+<section id="overview" class="py-16 bg-gray-100">
+  <div class="max-w-5xl mx-auto px-6">
+    <h3 class="text-3xl font-bold text-indigo-600 mb-6">🔍 Overview</h3>
+    <p class="text-gray-700 mb-6">
       ChatLock combines the best aspects of Instagram, Facebook, and Twitter into a privacy-first ecosystem. Unlike traditional platforms that prioritize ad revenue and data mining, ChatLock is built around authentic connection, data ownership, and user empowerment. Every feature is designed to protect your mental health, privacy, and creative freedom.
     </p>
   </div>
@@ -62,30 +66,29 @@
 <section id="features" class="py-16 bg-white">
   <div class="max-w-5xl mx-auto px-6">
     <h3 class="text-3xl font-bold text-indigo-600 mb-8">🌟 Unique & Innovative Features</h3>
-
-    <div class="space-y-10">
+    <div class="space-y-12">
       <!-- LockModes -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">🔐 1. LockModes – Post Control Jaise Pehle Kabhi Nahi</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           LockModes give users fine-grained control over every piece of content. Set visibility settings like "Close Friends Only" or "Mutuals". Posts can auto-lock after a set time, adding extra privacy. Unlockable posts let users request access with a personalized message, perfect for creators who want to monetize exclusivity without needing an external platform.
         </p>
-        <a href="/post" class="text-2xl font-extrabold text-red-500">Lock Mood</a>
+        <a href="/post" class="text-xl font-extrabold text-red-500 hover:text-red-600 transition duration-300">Lock Mood</a>
       </div>
 
       <!-- AI-Powered Vibe Filter -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">🧠 AI-Powered Vibe Filter</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           Before publishing a post, ChatLock’s AI scans its emotional tone (happy, sad, angry, sarcastic) and offers suggestions to tweak it. It recommends hashtags, moods, emojis, and even warns if your tone could be misunderstood, giving you full creative control while minimizing unintentional misunderstandings online.
         </p>
-        <a href="/aifeature" class="text-2xl font-extrabold text-red-500">🧠 AI-Powered Vibe Filter</a>
+        <a href="/aifeature" class="text-xl font-extrabold text-red-500 hover:text-red-600 transition duration-300">🧠 AI-Powered Vibe Filter</a>
       </div>
 
       <!-- VaultChat -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">💬 VaultChat – Disappearing, Encrypted Messages</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           VaultChat offers self-destructing messages and end-to-end encryption by default. Messages vanish after being read. Hidden codes can be embedded in images for secret communications viewable only by selected users, ideal for ultimate privacy lovers and activists.
         </p>
       </div>
@@ -93,7 +96,7 @@
       <!-- Persona Profiles -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">🎭 Persona Profiles</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           Users can manage up to three distinct personas: Personal, Work, and Artistic. Each persona can have its own audience, visual style, and privacy settings. Seamlessly switch between different sides of your life while keeping boundaries intact.
         </p>
       </div>
@@ -101,7 +104,7 @@
       <!-- Clarity Metrics -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">📊 Clarity Metrics (No Likes, Only Impact)</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           Say goodbye to shallow likes. ChatLock tracks real engagement such as comments, saves, and meaningful interactions, giving you an "Impact Score". Every week, you’ll get a visual story of your influence, helping you focus on real connections, not vanity numbers.
         </p>
       </div>
@@ -109,7 +112,7 @@
       <!-- SafeZone Mode -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">🧭 SafeZone Mode</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           When activated, SafeZone filters toxic content, limits stressful notifications, applies calming UI themes, and recommends mindful creators to follow. It’s social media for when you need peace, not pressure.
         </p>
       </div>
@@ -117,122 +120,8 @@
       <!-- Decentralized Identity -->
       <div>
         <h4 class="text-2xl font-semibold mb-2">💡 Decentralized Identity Control</h4>
-        <p class="text-gray-700">
+        <p class="text-gray-700 mb-4">
           Own your identity completely. With optional Web3 support, you can store your data on decentralized networks. Export or delete everything in one click — no need to beg for account deletion.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- AI Features -->
-<section id="ai" class="py-16 bg-gray-100">
-  <div class="max-w-5xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-indigo-600 mb-8">🔮 Advanced AI Features</h3>
-
-    <div class="space-y-10">
-        <a href="/advance-ai" class="text-2xl font-extrabold text-red-500">🔮 Advanced AI Features</a>
-
-      <!-- Memory Wall -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🧠 Memory Wall</h4>
-        <p class="text-gray-700">
-          Instead of random “one year ago” reminders, ChatLock’s AI curates emotional throwbacks relevant to your current mood. Whether it’s a joyful memory during a tough week or a motivational post from months ago, your past is thoughtfully resurfaced.
-        </p>
-      </div>
-
-      <!-- AI Story Remix -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🧵 AI Story Remix</h4>
-        <p class="text-gray-700">
-          Upload a story and instantly get suggestions for dynamic captions, fitting background music, and filter/font styles that match your post’s emotional vibe. It's like having a smart creative director in your pocket.
-        </p>
-      </div>
-
-      <!-- Post Rewriting Assistant -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🧙 Post Rewriting Assistant</h4>
-        <p class="text-gray-700">
-          Struggling with wording? ChatLock's AI can rewrite your posts into calm, funny, bold, or motivational tones, letting you tailor your message to your intent without overthinking it.
-        </p>
-      </div>
-
-      <!-- ShadowBlock AI -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🕵️ ShadowBlock AI</h4>
-        <p class="text-gray-700">
-          Detect fake, toxic, or ghost followers based on their behavior. ShadowBlock lets you quietly restrict or block them without causing drama. It also auto-declines shady unlock requests for sensitive posts.
-        </p>
-      </div>
-
-      <!-- Predictive Privacy -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🔒 Predictive Privacy Settings</h4>
-        <p class="text-gray-700">
-          Before publishing, AI suggests the safest LockMode settings depending on your content’s sensitivity, tone, and who's active on your network. Stay private automatically.
-        </p>
-      </div>
-
-      <!-- AutoPersona Switch -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">👤 AutoPersona Switch Assistant</h4>
-        <p class="text-gray-700">
-          Posting work-related art under your personal account? No worries. The AI recommends or auto-switches your persona based on post context for better profile hygiene.
-        </p>
-      </div>
-
-      <!-- Context-Aware VaultChat Replies -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">📩 Context-Aware VaultChat Replies</h4>
-        <p class="text-gray-700">
-          VaultChat’s smart reply system suggests responses depending on the emotional tone of the message you receive. Keep conversations sensitive, positive, or assertive based on real-time AI advice.
-        </p>
-      </div>
-
-      <!-- AI-Forged Friend Circles -->
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">🧠 AI-Forged Friend Circles</h4>
-        <p class="text-gray-700">
-          AI dynamically groups your followers into social circles like “True Vibes”, “Mutual Creators”, or “Ghost Followers” based on real engagement patterns. Make smarter posting decisions easily.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Target Audience -->
-<section id="audience" class="py-16 bg-white">
-  <div class="max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-indigo-600 mb-8">🎯 Target Audience</h3>
-    <ul class="list-disc list-inside space-y-2 text-gray-700">
-      <li>Gen Z & Millennials who crave genuine, pressure-free social media experiences.</li>
-      <li>Creators who need control over audience visibility and brand image.</li>
-      <li>Privacy-conscious users avoiding mass surveillance and data leaks.</li>
-      <li>Mental health advocates seeking mindful online spaces.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- Branding Options -->
-<section id="branding" class="py-16 bg-gray-100">
-  <div class="max-w-4xl mx-auto px-6">
-    <h3 class="text-3xl font-bold text-indigo-600 mb-8">🚀 Branding Options</h3>
-
-    <div class="space-y-6">
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">9. Zenthra (ZEN-thrah)</h4>
-        <p class="text-gray-700">
-          Meaning: Zen + Entra ("Enter")<br>
-          Vibe: A peaceful, curated gateway into meaningful digital spaces.<br>
-          Usage: "Step into Zenthra — where your mind meets meaning."
-        </p>
-      </div>
-      <div>
-        <h4 class="text-2xl font-semibold mb-2">10. Eclipzya (eh-CLIP-zee-uh)</h4>
-        <p class="text-gray-700">
-          Meaning: Eclipse + Enigma + Aura<br>
-          Vibe: Cosmic, private, mysterious.<br>
-          Usage: "What’s seen on Eclipzya, fades with the moon."
         </p>
       </div>
     </div>

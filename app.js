@@ -15,13 +15,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-
 // Session setup
 app.use(session({
-  secret: 'chatlock--websiteurlencoded__:true',
+  secret: 'yourStrongSecretHere', // Use a strong secret for your sessions
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 } // Set session expiration time (e.g., 1 minute)
+  cookie: { maxAge: 60000 * 15 } // Session expiration time set to 15 minutes
 }));
 
 // Mock user data (now includes an 8-digit verification code and role)
@@ -65,37 +64,33 @@ app.post('/login', (req, res) => {
 
 // Routes that require authentication
 app.get('/', checkAuth, (req, res) => {
-  // Render the home page with dynamic features data
-  res.render('index');
+  const { verificationCode, role } = req.session.user;
+  res.render('index', { verificationCode, role });
 });
 
 app.post('/submit-progress', (req, res) => {
-    const { task, description } = req.body;
-    console.log('Progress submitted:', task, description);
-    // Save to DB or process as needed
-    res.redirect('/thank-you'); // Redirect or show success
-  });
+  const { task, description } = req.body;
+  console.log('Progress submitted:', task, description);
+  // Save to DB or process as needed
+  res.redirect('/thank-you'); // Redirect or show success
+});
 
-  
-  app.get('/dashboard', (req, res) => {
-    res.render('dashboard', {
-      irfanTasks: [
-        { task: 'Reactjs', description: 'Created login and signup pages' },
-        { task: 'UI/UX', description: 'Designed mobile navigation' }
-      ],
-      wishuTasks: [
-        { task: 'Reactjs', description: 'Integrated chat socket.io' }
-      ],
-      anjaliTasks: [],
-      shrutiTasks: [
-        { task: 'UI/UX', description: 'Worked on feed layout and responsive design' }
-      ]
-    });
+app.get('/dashboard', checkAuth, (req, res) => {
+  res.render('dashboard', {
+    irfanTasks: [
+      { task: 'Reactjs', description: 'Created login and signup pages' },
+      { task: 'UI/UX', description: 'Designed mobile navigation' }
+    ],
+    wishuTasks: [
+      { task: 'Reactjs', description: 'Integrated chat socket.io' }
+    ],
+    anjaliTasks: [],
+    shrutiTasks: [
+      { task: 'UI/UX', description: 'Worked on feed layout and responsive design' }
+    ]
   });
-  
-// app.get("/landing" , (req,res)=>{
-//     res.render("index")
-// })
+});
+
 app.get('/post', checkAuth, (req, res) => {
   res.render('Post');
 });
@@ -106,6 +101,21 @@ app.get('/aifeature', checkAuth, (req, res) => {
 
 app.get('/advance-ai', checkAuth, (req, res) => {
   res.render('feature');
+});
+
+// Logout route to destroy session
+app.get('/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      return res.status(500).send('Failed to log out');
+    }
+    res.redirect('/login');
+  });
+});
+
+// 404 Error handling (Optional)
+app.use((req, res) => {
+  res.status(404).render('404'); // Make sure you create a 404.ejs view
 });
 
 // Start the server
