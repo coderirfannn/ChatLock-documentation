@@ -15,9 +15,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+
 // Session setup
 app.use(session({
-  secret: 'yourSecretKey',
+  secret: 'chatlock--websiteurlencoded__:true',
   resave: false,
   saveUninitialized: true,
   cookie: { maxAge: 60000 } // Set session expiration time (e.g., 1 minute)
@@ -25,9 +26,9 @@ app.use(session({
 
 // Mock user data (now includes an 8-digit verification code and role)
 const users = [
-  { verificationCode: '12345678', role: 'UiUx' },
+  { verificationCode: '9309769688', role: 'UiUx' },
   { verificationCode: '23456789', role: 'Full Project' },
-  { verificationCode: '34567890', role: 'student' },
+  { verificationCode: '34567890', role: 'Ui/Ux ---> Frotend' },
 ];
 
 // Middleware to check authentication
@@ -65,9 +66,12 @@ app.post('/login', (req, res) => {
 // Routes that require authentication
 app.get('/', checkAuth, (req, res) => {
   // Render the home page with dynamic features data
-  res.render('landing.ejs');
+  res.render('index');
 });
 
+app.get("/landing" , (req,res)=>{
+    res.render("index")
+})
 app.get('/post', checkAuth, (req, res) => {
   res.render('Post');
 });
