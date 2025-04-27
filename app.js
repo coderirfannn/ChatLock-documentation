@@ -26,9 +26,9 @@ app.use(session({
 
 // Mock user data (now includes an 8-digit verification code and role)
 const users = [
-  { verificationCode: '9309769688', role: 'UiUx' },
+  { verificationCode: '93097696', role: 'UiUx' },
   { verificationCode: '23456789', role: 'Full Project' },
-  { verificationCode: '34567890', role: 'Ui/Ux ---> Frotend' },
+  { verificationCode: '34567890', role: 'Ui/Ux' },
 ];
 
 // Middleware to check authentication
@@ -44,7 +44,7 @@ const checkAuth = (req, res, next) => {
 // Route to render the authentication page
 app.get('/login', (req, res) => {
   // Always pass an error variable, even if it's undefined
-  res.render('login', { error: undefined });
+  res.render('verify', { error: undefined });
 });
 
 // Handle login submission
@@ -59,7 +59,7 @@ app.post('/login', (req, res) => {
     res.redirect(redirectUrl);
   } else {
     // Pass error message to the login page
-    res.render('login', { error: 'Invalid verification code or role' });
+    res.render('verify', { error: 'Invalid verification code or role' });
   }
 });
 
@@ -69,9 +69,33 @@ app.get('/', checkAuth, (req, res) => {
   res.render('index');
 });
 
-app.get("/landing" , (req,res)=>{
-    res.render("index")
-})
+app.post('/submit-progress', (req, res) => {
+    const { task, description } = req.body;
+    console.log('Progress submitted:', task, description);
+    // Save to DB or process as needed
+    res.redirect('/thank-you'); // Redirect or show success
+  });
+
+  
+  app.get('/dashboard', (req, res) => {
+    res.render('dashboard', {
+      irfanTasks: [
+        { task: 'Reactjs', description: 'Created login and signup pages' },
+        { task: 'UI/UX', description: 'Designed mobile navigation' }
+      ],
+      wishuTasks: [
+        { task: 'Reactjs', description: 'Integrated chat socket.io' }
+      ],
+      anjaliTasks: [],
+      shrutiTasks: [
+        { task: 'UI/UX', description: 'Worked on feed layout and responsive design' }
+      ]
+    });
+  });
+  
+// app.get("/landing" , (req,res)=>{
+//     res.render("index")
+// })
 app.get('/post', checkAuth, (req, res) => {
   res.render('Post');
 });

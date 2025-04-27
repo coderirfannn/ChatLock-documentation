@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatLock Progress</title>
+</head>
+<body>
+    <form action="/submit-progress" method="POST" class="progress-form" style="max-width: 600px; margin: auto; padding: 20px; border-radius: 10px; background: #f9f9f9;">
+        <h2 style="text-align: center; margin-bottom: 20px;">ChatLock Progress Update</h2>
+      
+        <div style="margin-bottom: 15px;">
+          <label for="task" style="font-weight: bold;">Select Task</label>
+          <select name="task" id="task" required style="width: 100%; padding: 10px; margin-top: 5px;">
+            <option value="">-- Select an option --</option>
+            <option value="Reactjs">Reactjs</option>
+            <option value="UI/UX">UI/UX</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      
+        <div style="margin-bottom: 15px;">
+          <label for="description" style="font-weight: bold;">Work Description</label>
+          <textarea name="description" id="description" rows="5" required style="width: 100%; padding: 10px; margin-top: 5px;" placeholder="Describe what you worked on..."></textarea>
+        </div>
+      
+        <button type="submit" style="width: 100%; padding: 12px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; font-size: 16px;">Submit Progress</button>
+      </form>
+      
+</body>
+</html>
