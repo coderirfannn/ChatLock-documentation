@@ -65,7 +65,7 @@ app.post('/login', (req, res) => {
 // Routes that require authentication
 app.get('/', checkAuth, (req, res) => {
   // Render the home page with dynamic features data
-  res.render('index');
+  res.render('landing.ejs');
 });
 
 app.get('/post', checkAuth, (req, res) => {
